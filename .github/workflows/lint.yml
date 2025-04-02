@@ -25,3 +25,7 @@ jobs:
         # React RouterとTSCによる型チェック
         - name: Run TypeCheck
           run: bun typecheck
+
+        # Knipによる未使用依存関係、ファイル、エクスポートの検出
+        - name: Run Knip
+          run: bun knip
