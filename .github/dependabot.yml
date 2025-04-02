@@ -1,0 +1,65 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "dev-deps"
+      include: "scope"
+    groups:
+      # Reactのコア依存関係
+      react-core:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # React Router関連の依存関係
+      react-router:
+        patterns:
+          - "@react-router/*"
+          - "react-router"
+          - "react-router-devtools"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # ビルドツール関連
+      build-tools:
+        patterns:
+          - "vite*"
+          - "@tailwindcss/vite"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # スタイリング関連
+      styling:
+        patterns:
+          - "tailwindcss"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # TypeScript関連
+      typescript:
+        patterns:
+          - "typescript"
+          - "@types/node"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # その他のユーティリティ
+      utils:
+        patterns:
+          - "isbot"
+        update-types:
+          - "minor"
+          - "patch"
