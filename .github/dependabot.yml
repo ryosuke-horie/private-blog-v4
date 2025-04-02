@@ -60,6 +60,7 @@ updates:
       utils:
         patterns:
           - "isbot"
+          - "@biomejs/biome"
         update-types:
           - "minor"
           - "patch"
