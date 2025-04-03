@@ -1,3 +1,4 @@
+import { Accordion } from "@ark-ui/react/accordion";
 import { css } from "styled-system/css";
 import type { Route } from "./+types/home";
 
@@ -10,10 +11,17 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
 	return (
-		<div>
-			<h1 className={css({ fontSize: "2xl", fontWeight: "bold" })}>
-				Welcome to the home page
-			</h1>
-		</div>
+		<Accordion.Root defaultValue={["React"]}>
+			{["React", "Solid", "Vue"].map((item) => (
+				<Accordion.Item key={item} value={item}>
+					<Accordion.ItemTrigger>
+						What is {item}?<Accordion.ItemIndicator></Accordion.ItemIndicator>
+					</Accordion.ItemTrigger>
+					<Accordion.ItemContent>
+						{item} is a JavaScript library for building user interfaces.
+					</Accordion.ItemContent>
+				</Accordion.Item>
+			))}
+		</Accordion.Root>
 	);
 }
