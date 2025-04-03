@@ -14,9 +14,7 @@ export default function Home() {
 		<Accordion.Root defaultValue={["React"]}>
 			{["React", "Solid", "Vue"].map((item) => (
 				<Accordion.Item key={item} value={item}>
-					<Accordion.ItemTrigger>
-						What is {item}?<Accordion.ItemIndicator></Accordion.ItemIndicator>
-					</Accordion.ItemTrigger>
+					<Accordion.ItemTrigger>What is {item}?</Accordion.ItemTrigger>
 					<Accordion.ItemContent>
 						{item} is a JavaScript library for building user interfaces.
 					</Accordion.ItemContent>
