@@ -28,6 +28,7 @@ updates:
       ui-libraries:
         patterns:
           - "@pandacss/dev"
+          - "@ark-ui/react"
 
       # ビルドツール関連
       build-tools:
