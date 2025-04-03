@@ -6,6 +6,7 @@
 		"build": "react-router build",
 		"dev": "react-router dev",
 		"start": "react-router-serve ./build/server/index.js",
+		"prepare": "panda codegen",
 		"typecheck": "react-router typegen && tsc",
 		"lint": "bunx biome check",
 		"format": "bunx biome check --write ",
@@ -21,6 +22,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@pandacss/dev": "^0.53.3",
 		"@react-router/dev": "^7.4.1",
 		"@types/node": "^22.13.17",
 		"@types/react": "^19.0.1",
