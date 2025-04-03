@@ -24,6 +24,11 @@ updates:
           - "react-router"
           - "react-router-devtools"
 
+      # UIライブラリ関連
+      ui-libraries:
+        patterns:
+          - "@pandacss/dev"
+
       # ビルドツール関連
       build-tools:
         patterns:
