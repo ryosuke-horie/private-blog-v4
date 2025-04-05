@@ -7,12 +7,7 @@ export default defineConfig({
 	plugins: [
 		reactRouter(),
 		tsconfigPaths(),
-		cloudflare({
-			// Workersモードを実現するための設定
-			assets: {
-				directory: "build/client",
-			},
-		}),
+        cloudflare(),
 	],
 	build: {
 		target: "esnext",
