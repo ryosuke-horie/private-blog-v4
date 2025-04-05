@@ -30,6 +30,7 @@ updates:
           - "@pandacss/dev"
           - "@ark-ui/react"
           - "@park-ui/panda-preset"
+          - "lucide-react"
 
       # ビルドツール関連
       build-tools:
