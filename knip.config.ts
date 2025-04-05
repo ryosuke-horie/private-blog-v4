@@ -8,6 +8,7 @@ const config: KnipConfig = {
 		"react-router-devtools",
 		"@ark-ui/react",
 		"@park-ui/panda-preset",
+		"lucide-react",
 	],
 	ignore: [
 		"panda.config.ts",
