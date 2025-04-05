@@ -1,9 +1,11 @@
 name = "private-blog-v4"
 compatibility_date = "2024-04-01"
-main = "build/worker/index.js"
 
+# Workers Sitesの設定
 [site]
 bucket = "./build/client"
+site_config = { "include" = ["*"], "exclude" = [] }
+entry-point = "workers"
 
 # Cloudflare R2の設定（画像実装時に有効化する）
 # [[r2_buckets]]

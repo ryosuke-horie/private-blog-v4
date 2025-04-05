@@ -4,9 +4,18 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-	plugins: [reactRouter(), tsconfigPaths(), cloudflare()],
+	plugins: [
+		reactRouter(),
+		tsconfigPaths(),
+		cloudflare({
+			// Workersモードを実現するための設定
+			assets: {
+				directory: "build/client",
+			},
+		}),
+	],
 	build: {
 		target: "esnext",
-		rollupOptions: {},
+		outDir: "build",
 	},
 });

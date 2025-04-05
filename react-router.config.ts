@@ -1,10 +1,18 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-	// SSGモードに変更（SPAモードを有効化）
+	// SSGモードを設定
 	ssr: false,
-	// return a list of URLs to prerender at build time
+
+	// プリレンダリングの設定
+	// "*" を使って全てのルートをプリレンダリング
 	async prerender() {
-		return ["*"];
+		return ["/"];
+	},
+
+	// 出力ディレクトリの設定
+	outputDir: {
+		client: "build/client",
+		server: "build/server",
 	},
 } satisfies Config;
