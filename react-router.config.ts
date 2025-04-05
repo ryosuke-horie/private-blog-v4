@@ -1,7 +1,12 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-	// Config options...
-	// Server-side render by default, to enable SPA mode set this to `false`
+	// SSGモードを設定
 	ssr: true,
+
+	// プリレンダリングの設定(SSG)
+	// "*" を使って全てのルートをプリレンダリング
+	async prerender() {
+		return ["/"];
+	},
 } satisfies Config;
