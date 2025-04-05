@@ -15,6 +15,7 @@ const config: KnipConfig = {
 		"postcss.config.cjs",
 		"vite.config.ts",
 		"app/components/parkui/**",
+		"workers/**",
 	],
 	entry: ["./.react-router/types", "."],
 };

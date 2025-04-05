@@ -7,7 +7,14 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["node_modules", "styled-system", ".vite", ".react-router"]
+		"ignore": [
+			"node_modules",
+			"styled-system",
+			".vite",
+			".react-router",
+			"build",
+			".wrangler"
+		]
 	},
 	"formatter": {
 		"enabled": true,
