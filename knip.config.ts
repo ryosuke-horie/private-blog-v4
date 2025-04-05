@@ -16,6 +16,7 @@ const config: KnipConfig = {
 		"vite.config.ts",
 		"app/components/parkui/**",
 	],
+	entry: ["./.react-router/types"],
 };
 
 export default config;
