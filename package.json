@@ -10,10 +10,8 @@
 		"typecheck": "react-router typegen && tsc",
 		"lint": "bunx biome check",
 		"format": "bunx biome check --write && knip",
-		"deploy": "wrangler deploy",
-		"build:deploy": "bun run build && bun run deploy",
-		"preview": "wrangler dev --local",
-		"preview:build": "bun run build && wrangler dev"
+		"deploy": "bun run build && wrangler deploy",
+		"preview": "bun run build && wrangler dev --local"
 	},
 	"dependencies": {
 		"@ark-ui/react": "^5.4.0",
