@@ -6,8 +6,15 @@ const config: KnipConfig = {
 		"isbot",
 		"@biomejs/biome",
 		"react-router-devtools",
+		"@ark-ui/react",
+		"@park-ui/panda-preset",
 	],
-	ignore: ["panda.config.ts", "postcss.config.cjs", "vite.config.ts"],
+	ignore: [
+		"panda.config.ts",
+		"postcss.config.cjs",
+		"vite.config.ts",
+		"app/components/parkui/**",
+	],
 };
 
 export default config;
