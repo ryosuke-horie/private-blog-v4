@@ -8,9 +8,8 @@
 		"start": "react-router-serve ./build/server/index.js",
 		"prepare": "panda codegen",
 		"typecheck": "react-router typegen && tsc",
-		"lint": "bunx biome check",
-		"format": "bunx biome check --write ",
-		"knip": "knip"
+		"lint": "bunx biome check && knip",
+		"format": "bunx biome check --write && knip"
 	},
 	"dependencies": {
 		"@ark-ui/react": "^5.4.0",
