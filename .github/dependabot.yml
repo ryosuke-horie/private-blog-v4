@@ -43,6 +43,12 @@ updates:
           - "typescript"
           - "@types/node"
 
+      # Cloudflare関連依存
+      cloudflare:
+        patterns:
+          - "wrangler"
+          - "@cloudflare/vite-plugin"
+
       # その他のユーティリティ
       utils:
         patterns:
