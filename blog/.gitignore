@@ -2,9 +2,9 @@
 /node_modules/
 
 # React Router
-/.react-router/
-/build/
-/.vite/
+.react-router/
+build/
+.vite/
 ## Panda
 styled-system
 styled-system-studio

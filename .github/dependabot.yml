@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "bun"
-    directory: "/"
+    directory: "/blog"
     schedule:
       interval: "weekly"
     commit-message:
