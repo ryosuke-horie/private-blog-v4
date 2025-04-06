@@ -1,0 +1,17 @@
+{
+  "name": "notionconverter",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "@notion-md-converter/core": "0.9.0",
+    "@notion-md-converter/types": "0.9.0",
+    "dotenv": "^16.4.7"
+  }
+}
