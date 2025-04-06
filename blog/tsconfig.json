@@ -3,8 +3,8 @@
 		"**/*",
 		"**/.server/**/*",
 		"**/.client/**/*",
-		"blog/.react-router/types/**/*",
-		"blog/app",
+		".react-router/types/**/*",
+		"app",
 		"styled-system"
 	],
 	"compilerOptions": {
@@ -14,10 +14,10 @@
 		"module": "ES2022",
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
-		"rootDirs": [".", "blog/.react-router/types"],
+		"rootDirs": [".", ".react-router/types"],
 		"baseUrl": ".",
 		"paths": {
-			"~/*": ["blog/app/*"]
+			"~/*": ["./app/*"]
 		},
 		"esModuleInterop": true,
 		"verbatimModuleSyntax": true,
