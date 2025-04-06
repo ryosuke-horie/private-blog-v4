@@ -63,3 +63,12 @@ updates:
       prefix: "deps"
       prefix-development: "dev-deps"
       include: "scope"
+
+  - package-ecosystem: "bun"
+    directory: "/tools/NotionConverter"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps:notion-converter"
+      prefix-development: "dev-deps:notion-converter"
+      include: "scope"

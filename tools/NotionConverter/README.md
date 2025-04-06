@@ -1,15 +1,8 @@
 # notionconverter
 
-To install dependencies:
+Notionの記事を取得する。
 
-```bash
-bun install
-```
+## 使用方法
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.8. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+1. index.tsのpageIdを取得したいNotion記事のページに差し替える。
+2. `bun run index.ts`

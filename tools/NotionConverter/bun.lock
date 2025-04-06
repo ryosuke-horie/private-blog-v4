@@ -6,6 +6,7 @@
       "dependencies": {
         "@notion-md-converter/core": "0.9.0",
         "@notion-md-converter/types": "0.9.0",
+        "@notion-md-converter/zenn": "^0.9.0",
         "dotenv": "^16.4.7",
       },
       "devDependencies": {
@@ -20,6 +21,8 @@
     "@notion-md-converter/core": ["@notion-md-converter/core@0.9.0", "", { "dependencies": { "@notionhq/client": "^2.2.16" } }, "sha512-z5DwD05ED7Z8vQI67lRfyRCdQxdEDWSZTKhulah/w6N8imAEj9uzNIg1wWCQ9JhRRiVNA0pn0i4k7Hgd2AbisQ=="],
 
     "@notion-md-converter/types": ["@notion-md-converter/types@0.9.0", "", { "dependencies": { "@notionhq/client": "^2.2.16" } }, "sha512-375pN8k/H96dXycZDupTuXACams9anofLkzgA1X496FHm1QsTWu7PfART+8n5EKbTroeSWV8F8zusnpvx8EDfw=="],
+
+    "@notion-md-converter/zenn": ["@notion-md-converter/zenn@0.9.0", "", { "dependencies": { "@notion-md-converter/core": "0.9.0" } }, "sha512-SnoBg7fgAab4/29TfC6IzArWRynrkyBxmBiRDuhCm+oviCyhIQaTuABIaMzO5JxI8NhQEX+IYBnE5KBUr/+MqQ=="],
 
     "@notionhq/client": ["@notionhq/client@2.3.0", "", { "dependencies": { "@types/node-fetch": "^2.5.10", "node-fetch": "^2.6.1" } }, "sha512-l7WqTCpQqC+HibkB9chghONQTYcxNQT0/rOJemBfmuKQRTu2vuV8B3yA395iKaUdDo7HI+0KvQaz9687Xskzkw=="],
 
