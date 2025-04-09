@@ -1,60 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: "bun"
-    directory: "/blog"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "deps"
-      prefix-development: "dev-deps"
-      include: "scope"
-    groups:
-      # Reactのコア依存関係
-      react-core:
-        patterns:
-          - "react"
-          - "react-dom"
-          - "@types/react"
-          - "@types/react-dom"
-
-      # React Router関連の依存関係
-      react-router:
-        patterns:
-          - "@react-router/*"
-          - "react-router"
-          - "react-router-devtools"
-
-      # UIライブラリ関連
-      ui-libraries:
-        patterns:
-          - "@pandacss/dev"
-          - "@ark-ui/react"
-          - "@park-ui/panda-preset"
-          - "lucide-react"
-
-      # ビルドツール関連
-      build-tools:
-        patterns:
-          - "vite*"
-
-      # TypeScript関連
-      typescript:
-        patterns:
-          - "typescript"
-          - "@types/node"
-
-      # Cloudflare関連依存
-      cloudflare:
-        patterns:
-          - "wrangler"
-          - "@cloudflare/vite-plugin"
-
-      # その他のユーティリティ
-      utils:
-        patterns:
-          - "isbot"
-          - "@biomejs/biome"
-
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
@@ -64,7 +9,7 @@ updates:
       prefix-development: "dev-deps"
       include: "scope"
 
-  - package-ecosystem: "bun"
+  - package-ecosystem: "npm"
     directory: "/tools/NotionConverter"
     schedule:
       interval: "weekly"
