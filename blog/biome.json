@@ -9,11 +9,14 @@
 		"ignoreUnknown": false,
 		"ignore": [
 			"node_modules",
-			"styled-system",
-			".vite",
 			".react-router",
-			"build",
-			".wrangler"
+			".wrangler",
+			"styled-system",
+			"*.json",
+			"*.config.*",
+			"wrangler.jsonc",
+			"worker-configuration.d.ts",
+			"*.css"
 		]
 	},
 	"formatter": {
@@ -27,14 +30,11 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"style": {
+				"noParameterAssign": "off"
+			},
 			"correctness": {
 				"noEmptyPattern": "off"
-			},
-			"complexity": {
-				"noBannedTypes": "off"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "off"
 			}
 		}
 	},
