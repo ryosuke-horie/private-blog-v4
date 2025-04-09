@@ -1,12 +1,8 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-	// SSGモードを設定
-	ssr: true,
-
-	// プリレンダリングの設定(SSG)
-	// "*" を使って全てのルートをプリレンダリング
-	async prerender() {
-		return ["/"];
-	},
+  ssr: true,
+  future: {
+    unstable_viteEnvironmentApi: true,
+  },
 } satisfies Config;
