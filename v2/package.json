@@ -8,7 +8,11 @@
 		"deploy": "npm run build && wrangler deploy",
 		"dev": "react-router dev",
 		"preview": "npm run build && vite preview",
-		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
+		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b",
+        "lint": "npx @biomejs/biome check",
+        "format": "npx @biomejs/biome check --write",
+        "check": "npm run typecheck && npm run lint",
+        "check:fix": "npm run typecheck && npm run format"
 	},
 	"dependencies": {
 		"isbot": "^5.1.17",
@@ -17,6 +21,7 @@
 		"react-router": "^7.5.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@cloudflare/vite-plugin": "^1.0.0",
 		"@cloudflare/workers-types": "^4.20250409.0",
 		"@react-router/dev": "^7.5.0",
