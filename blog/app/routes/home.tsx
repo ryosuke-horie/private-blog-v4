@@ -1,4 +1,3 @@
-import { css } from "styled-system/css";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -8,12 +7,14 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
-export default function Home() {
+export function loader({ context }: Route.LoaderArgs) {
+	return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
 	return (
-		<div className={css({ padding: "4", backgroundColor: "gray.100" })}>
-			<h1 className={css({ fontSize: "2xl", fontWeight: "bold" })}>
-				Welcome to the home page
-			</h1>
+		<div>
+			<h1>Welcome to Remix</h1>
 		</div>
 	);
 }

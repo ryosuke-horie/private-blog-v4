@@ -1,12 +1,13 @@
 .DS_Store
 /node_modules/
+*.tsbuildinfo
 
 # React Router
-.react-router/
-build/
-.vite/
-## Panda
-styled-system
-styled-system-studio
-# Wrangler
+/.react-router/
+/build/
+
+# Cloudflare
+.mf
 .wrangler
+.dev.vars*
+

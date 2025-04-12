@@ -9,8 +9,8 @@
 
 ### フロントエンド
 - React Router v7
-- Panda CSS + Park UI (Ark UI)
-- Lucide React (アイコン)
+- Vite
+- Tailwind CSS
 
 ### インフラ
 - Cloudflare Workers (ホスティング)
@@ -22,6 +22,5 @@
 3. SSG機能
 
 ## 初期実装状況
-- React Router + Panda CSS + Park UIの基本設定完了
-- ディレクトリ構造確立
-- アンバーをアクセントカラー、サンドをグレーカラーとして設定
+- React Router + Vite + Tailwind CSS の基本設定完了
+- ディレクトリ構造確立 (`blog` ディレクトリ以下)
