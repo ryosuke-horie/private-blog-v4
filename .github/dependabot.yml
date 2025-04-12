@@ -17,3 +17,44 @@ updates:
       prefix: "deps:notion-converter"
       prefix-development: "dev-deps:notion-converter"
       include: "scope"
+
+  - package-ecosystem: "npm"
+    directory: "/blog"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps:blog"
+      prefix-development: "dev-deps:blog"
+      include: "scope"
+    groups:
+      react-router:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "react-router"
+          - "@react-router/dev"
+          - "@types/react"
+          - "@types/react-dom"
+      vite:
+        patterns:
+          - "vite"
+          - "@tailwindcss/vite"
+          - "vite-tsconfig-paths"
+          - "@cloudflare/vite-plugin"
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+      cloudflare:
+        patterns:
+          - "wrangler"
+          - "@cloudflare/workers-types"
+      typescript:
+        patterns:
+          - "typescript"
+          - "@types/node"
+      biome:
+        patterns:
+          - "@biomejs/biome"
+      other:
+        patterns:
+          - "isbot"
