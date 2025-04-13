@@ -63,7 +63,7 @@ async function downloadImage(imageUrl: string, outputDir: string): Promise<strin
 }
 
 // Markdownから画像URLを抽出してダウンロードし、パスを更新する関数
-async function processMarkdownImages(markdownContent: string, imageDirPath: string, imageUrlPrefix: string = '/images/'): Promise<string> {
+async function processMarkdownImages(markdownContent: string, imageDirPath: string, imageUrlPrefix: string = './images/'): Promise<string> {
     // Markdown内の画像パターンを検出する正規表現
     const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
     
@@ -169,16 +169,8 @@ const main = async () => {
         console.log(`Generated Markdown (first 200 chars):\n${markdownResult.substring(0, 200)}...`);
     }
     
-    // 画像の保存先ディレクトリとURLプレフィックス
-    const imageDirPath = path.resolve('./public/images');
-    const imageUrlPrefix = '/images/'; // ブログでの画像パスのプレフィックス
-    
-    console.log(`Processing images, saving to: ${imageDirPath}`);
-    // 画像をダウンロードしてMarkdownのパスを更新
-    const processedMarkdown = await processMarkdownImages(markdownResult, imageDirPath, imageUrlPrefix);
-    
     // ページタイトルを取得（最初の# で始まる行から）
-    const titleMatch = processedMarkdown.match(/^# (.+)$/m);
+    const titleMatch = markdownResult.match(/^# (.+)$/m);
     let title = titleMatch && titleMatch[1] ? titleMatch[1] : `notion-page-${pageId}`;
     
     // タイトルが空白しかない場合は、デフォルトのページIDを使用
@@ -189,16 +181,35 @@ const main = async () => {
     const sanitizedTitle = title.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
     console.log(`Using title: "${title}" (sanitized: "${sanitizedTitle}")`);
     
-    // 出力ディレクトリが存在しない場合は作成
-    const outputDir = path.resolve('./content');
+    // コンテンツのルートディレクトリ
+    const contentsDir = path.join(__dirname, '../../contents');
+    
+    // 記事ごとのディレクトリを作成
+    const articleDir = path.join(contentsDir, sanitizedTitle);
     try {
-        await fs.mkdir(outputDir, { recursive: true });
+        await fs.mkdir(articleDir, { recursive: true });
     } catch (err) {
-        console.error(`Failed to create directory: ${outputDir}`, err);
+        console.error(`Failed to create directory: ${articleDir}`, err);
     }
     
+    // 記事ごとの画像ディレクトリを作成
+    const articleImagesDir = path.join(articleDir, 'images');
+    try {
+        await fs.mkdir(articleImagesDir, { recursive: true });
+    } catch (err) {
+        console.error(`Failed to create directory: ${articleImagesDir}`, err);
+    }
+    
+    // 画像の保存先ディレクトリとURLプレフィックス
+    const imageDirPath = articleImagesDir;
+    const imageUrlPrefix = './images/'; // 相対パスで画像を参照
+    
+    console.log(`Processing images, saving to: ${imageDirPath}`);
+    // 画像をダウンロードしてMarkdownのパスを更新
+    const processedMarkdown = await processMarkdownImages(markdownResult, imageDirPath, imageUrlPrefix);
+    
     // Markdownファイルを保存
-    const outputPath = path.join(outputDir, `${sanitizedTitle}.md`);
+    const outputPath = path.join(articleDir, 'index.md');
     await fs.writeFile(outputPath, processedMarkdown);
     
     console.log(`Markdown saved to: ${outputPath}`);
