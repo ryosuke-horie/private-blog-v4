@@ -127,7 +127,13 @@ async function processMarkdownImages(markdownContent: string, imageDirPath: stri
         // 画像パスを置換
         const newImagePath = `${imageUrlPrefix}${filename}`;
         const altTextMatch = fullMatch.match(/!\[(.*?)\]/);
-        const altText = altTextMatch ? altTextMatch[1] : '';
+        let altText = altTextMatch ? altTextMatch[1] : '';
+        
+        // Alt属性がURLの場合は空文字列に置き換える
+        if (altText && (altText.startsWith('http') || altText.length > 50)) {
+            altText = '';
+        }
+        
         const newImageMarkdown = `![${altText}](${newImagePath})`;
         
         if (DEBUG) console.log(`Replacing:\n${fullMatch.substring(0, 50)}...\nWith:\n${newImageMarkdown}`);
@@ -151,7 +157,7 @@ const main = async () => {
         auth: notionToken,
     });
 
-    const pageId = "1d4b87357979808b8c2fe093a41dedee"; // ここにNotionのページIDを指定
+    const pageId = "1cfb87357979801faaacc223d5ee7e81"; // ここにNotionのページIDを指定
     console.log(`Fetching Notion page: ${pageId}`);
     const content = await $getPageFullContent(client, pageId);
     console.log(`Retrieved content from Notion, converting to Markdown`);
