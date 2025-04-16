@@ -5,4 +5,8 @@ export default {
   future: {
     unstable_viteEnvironmentApi: true,
   },
+  // ビルド時にプリレンダリングするURLのリストを返す
+  async prerender() {
+    return ["/", "/blog"];
+  },
 } satisfies Config;
