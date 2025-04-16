@@ -16,7 +16,8 @@
 			"*.config.*",
 			"wrangler.jsonc",
 			"worker-configuration.d.ts",
-			"*.css"
+			"*.css",
+			"build"
 		]
 	},
 	"formatter": {
