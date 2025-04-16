@@ -7,6 +7,6 @@ export default {
   },
   // ビルド時にプリレンダリングするURLのリストを返す
   async prerender() {
-    return ["/", "/blog"];
+    return ["/"];
   },
 } satisfies Config;
